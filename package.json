@@ -2,6 +2,9 @@
   "name": "infogain",
   "version": "0.1.0",
   "private": true,
+  "lint-staged": {
+    "**/*": "prettier . --write --ignore-unknown"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -37,12 +40,15 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@faker-js/faker": "^8.3.1",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
+    "msw": "^2.0.10",
     "prettier": "3.1.0"
   },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+  "msw": {
+    "workerDirectory": "public"
   }
 }
