@@ -1,12 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useEffect } from "react";
+import {default as useTransactionsHistory} from "./app/hooks/transaction/useTransactionsHistory";
 
 function App() {
-
-  useEffect(() => {
-    fetch('/api/test')
-  }, [])
+  const {transactionsHistory} = useTransactionsHistory();
 
   return (
     <div className="App">
@@ -24,6 +21,16 @@ function App() {
           Learn React
         </a>
       </header>
+      {transactionsHistory.length > 0 && (
+        <ul>
+          {transactionsHistory.map((t) => (
+          <li key={t.transactionId}>
+            <h6>{t.transactionId}</h6>
+            <span>{t.price}</span>
+          </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
