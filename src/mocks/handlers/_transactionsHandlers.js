@@ -4,7 +4,7 @@ import {subtractMonths } from '../../_shared/utils';
 
 const date = new Date();
 
-function createFakeTransaction() {
+function createFakeTransaction(date) {
     return {
         transactionId: faker.string.uuid(),
         createdDate: faker.date.betweens({from: subtractMonths(date, 3), to: date}),
@@ -13,7 +13,7 @@ function createFakeTransaction() {
     }
 }
 
-const response = Array.from({length: 30}).map(() => createFakeTransaction())
+const response = Array.from({length: 30}).map(() => createFakeTransaction(date))
 
 const transactionsHandlers = [
     http.get('/api/transactionsHistory', () => {

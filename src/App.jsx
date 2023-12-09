@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import useTransactionsHistory from "./app/hooks/transaction/useTransactionsHistory";
 import useRewardConfiguration from "./app/hooks/rewardProgram/useRewardConfiguarion";
-import { getRewardPointsByTransaction } from "./_shared/utils/_rewardPointCounter";
+import { getRewardPointsByTransaction } from "./_shared/utils";
 
 function App() {
   const {transactionsHistory} = useTransactionsHistory();

@@ -1,7 +1,5 @@
 import transactionsHandlers from './_transactionsHandlers';
-import rewardProgramHandlers from './_rewardProgramHandlers copy';
-
-
+import rewardProgramHandlers from './_rewardProgramHandlers';
 
 export const handlers = [
     ...transactionsHandlers,
