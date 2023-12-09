@@ -1,9 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
-import {default as useTransactionsHistory} from "./app/hooks/transaction/useTransactionsHistory";
+import useTransactionsHistory from "./app/hooks/transaction/useTransactionsHistory";
+import useRewardConfiguration from "./app/hooks/rewardProgram/useRewardConfiguarion";
+import { getRewardPointsByTransaction } from "./_shared/utils/_rewardPointCounter";
 
 function App() {
   const {transactionsHistory} = useTransactionsHistory();
+  const {configuration} = useRewardConfiguration();
+
 
   return (
     <div className="App">
@@ -26,7 +30,10 @@ function App() {
           {transactionsHistory.map((t) => (
           <li key={t.transactionId}>
             <h6>{t.transactionId}</h6>
-            <span>{t.price}</span>
+            <p>price: {t.price}</p>
+            {!!configuration && (
+              <span>points: {getRewardPointsByTransaction(t.price, configuration.basePointUnit, configuration.pointRanges)}</span>
+            )}
           </li>
           ))}
         </ul>
