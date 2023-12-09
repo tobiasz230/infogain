@@ -1,5 +1,7 @@
-export const getRewardPointsByTransaction = (price, basePointValue,  pointRanges) => {
+export const getRewardPointsByTransaction = (price, basePointValue, pointRanges) => {
     const priceWithoutRest = Math.floor(price);
+
+    console.log(price, basePointValue,  pointRanges)
 
     return pointRanges.reduce((points, pointRange) => {
         const {from, to, multiple} = pointRange;
@@ -11,7 +13,7 @@ export const getRewardPointsByTransaction = (price, basePointValue,  pointRanges
             case(priceWithoutRest > from && priceWithoutRest >= to):
                 return points += (to - from) * multiplier 
             default:
-                return 0;
+                return points;
         } 
     }, 0);
 }

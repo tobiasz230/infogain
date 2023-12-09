@@ -7,6 +7,7 @@ import { getRewardPointsByTransaction } from "./_shared/utils/_rewardPointCounte
 function App() {
   const {transactionsHistory} = useTransactionsHistory();
   const {configuration} = useRewardConfiguration();
+  console.log('CONFIG', configuration)
 
 
   return (
@@ -32,7 +33,7 @@ function App() {
             <h6>{t.transactionId}</h6>
             <p>price: {t.price}</p>
             {!!configuration && (
-              <span>points: {getRewardPointsByTransaction(t.price, configuration.basePointUnit, configuration.pointRanges)}</span>
+              <span>points: {getRewardPointsByTransaction(t.price, configuration.basePointValue, configuration.pointRanges)}</span>
             )}
           </li>
           ))}
