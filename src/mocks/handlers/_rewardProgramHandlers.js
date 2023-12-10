@@ -1,14 +1,9 @@
 import {http, HttpResponse} from 'msw';
+import { MOCK_CONFIG } from '../config';
 
 const rewardProgramHandlers = [
     http.get('/api/rewardProgramConfig', () => {
-        return HttpResponse.json({
-            basePointValue: 1,
-            pointRanges: [
-                {from: 50, to: 100, multiple: 1},
-                {from: 100, to: null, multiple: 2}
-            ]
-        })
+        return HttpResponse.json(MOCK_CONFIG.rewardPropgram)
     })
 ]
 

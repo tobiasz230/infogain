@@ -1,2 +1,2 @@
-export * from './_time';
-    export * from './_rewardPoint';
+export * from './_date';
+export * from './_rewardPoint';
