@@ -1,10 +1,13 @@
 export const MOCK_CONFIG = Object.freeze({
-    numberOfAllTransactions: 300,
+    numberOfCustomers: 20,
+    numberOfAllTransactions: 500,
     transactionsFromRecentMonths: 3,
     transactionAmount: {
         min: 5,
-        max: 300
+        max: 300,
+        dec: 2
     },
+    currency: { code: 'USD', name: 'US Dollar', symbol: '$' },
     rewardPropgram: {
         basePointValue: 1,
         pointRanges: [

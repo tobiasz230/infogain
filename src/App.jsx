@@ -1,5 +1,5 @@
 // import logo from "./logo.svg";
-import "./App.css";
+// import "./App.css";
 import useTransactionsHistory from "./app/hooks/transaction/useTransactionsHistory";
 import useRewardConfiguration from "./app/hooks/rewardProgram/useRewardConfiguarion";
 
@@ -14,6 +14,8 @@ function App() {
           {transactionsHistory.map((t) => (
           <li key={t.transactionId}>
             <h6>{t.transactionId}</h6>
+            
+            <p>customer: {t.customerId}</p>
             <p>price: {t.price}</p>
             {!!configuration && (
               <span>points: {t.rewardPoints}</span>
