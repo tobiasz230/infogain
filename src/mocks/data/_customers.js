@@ -11,6 +11,7 @@ function createFakeCustomer() {
         lastName,
         fullName: `${firstName} ${lastName}`,
         avatar: faker.image.avatar(),
+        company: faker.company.name()
     }
 }
 
