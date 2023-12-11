@@ -28,7 +28,7 @@ function App() {
                 {customers.map((c) => (
                   <ListItemButton key={c.id} onClick={() => handleClick(c.id)} selected={selected === c.id}>
                     <ListItemStart> 
-                      <Avatar imageUrl={c.avatar} size={56} alt={c.fullName}/>
+                      <Avatar imageUrl={c.avatar} alt={c.fullName}/>
                     </ListItemStart>
                     <ListItemText text={c.fullName}>
                       <small>{c.company}</small>

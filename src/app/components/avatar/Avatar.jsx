@@ -1,6 +1,6 @@
 import './Avatar.css';
 
-const Avatar = ({imageUrl, size = 64, alt=""}) => (
+const Avatar = ({imageUrl, size = 56, alt=""}) => (
     <span className="avatar" style={{
         width: size,
         height: size

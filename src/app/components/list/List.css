@@ -6,10 +6,6 @@
 .list__item {
     list-style: none;
     margin-bottom: var(--margin-md); 
-    border-radius: var(--border-radius); 
-    border: 1px solid var(--border-color); 
-    box-shadow: var(--box-shadow);
-
 }
 
 .list__item:last-child {

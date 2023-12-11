@@ -17,11 +17,14 @@
     /* --padding-xl: 32px; */
   
     --box-shadow: -1px 1px 2px 0px #ececec;
+    --box-shadow-hover: -4px 4px 4px 0px #e1e1e1;
 
     
     /* --font-weight-thin: 300; */
     --font-weight-regular: 400;
     --font-weight-bold: 600;
 
+    --list-item-hover-bg: #f9f9f9;
+    --list-item-selected-border-color: #85d763;
     --list-item-selected-background: #f9f9f9;
   }
