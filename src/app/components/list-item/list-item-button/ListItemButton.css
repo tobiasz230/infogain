@@ -1,0 +1,10 @@
+.list-item-button {
+    display: flex;
+    cursor: pointer;
+    padding: var(--padding-md)
+}
+
+.list-item-button.list-item-button--selected {
+    background-color: var(--list-item-selected-background);
+}
+

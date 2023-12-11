@@ -1,0 +1,9 @@
+.list-item-text {
+    flex: 1;
+}
+
+.list-item-text__primary {
+    display: block;
+    font-weight: var(--font-weight-bold);
+    margin: var(--margin-s) 0
+}
