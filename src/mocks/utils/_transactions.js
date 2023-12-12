@@ -7,7 +7,7 @@ const {transactionsFromRecentMonths,  rewardPropgram, transactionAmount, currenc
 const date = new Date();
 
 export function createFakeTransaction() {
-    const price = faker.finance.amount(transactionAmount);
+    const price = Number(faker.finance.amount({...transactionAmount,  dec: 0}));
 
     return {
         transactionId: faker.string.alphanumeric({length: 10, casing: 'upper'}),
