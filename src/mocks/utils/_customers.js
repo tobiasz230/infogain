@@ -1,7 +1,6 @@
 import {faker} from '@faker-js/faker';
-import { MOCK_CONFIG } from '../config';
 
-function createFakeCustomer() {
+export function createFakeCustomer() {
     const firstName = faker.person.firstName();
     const lastName = faker.person.lastName();
 
@@ -14,7 +13,3 @@ function createFakeCustomer() {
         company: faker.company.name()
     }
 }
-
-export const customers = Array
-.from({length: MOCK_CONFIG.numberOfCustomers})
-.map(() => createFakeCustomer())

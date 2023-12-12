@@ -1,10 +1,15 @@
 import {http, HttpResponse} from 'msw';
-import {transactions} from '../data'
+import { MOCK_CONFIG } from '../config';
+import { createFakeTransaction } from '../utils';
 
 const transactionsHandlers = [
-    http.get('/api/transactions/customer/:customerId', ({customerId}) => {
-        const userTransactions = transactions.filter((t) => t.customerId === customerId);
-        return HttpResponse.json(userTransactions)
+    http.get('/api/transactions/customer/:customerId', () => {
+        const transactions = Array
+            .from({length: MOCK_CONFIG.numberOfCustomerTransactions})
+            .map(() => createFakeTransaction())
+            .sort((a, b) => a.createdDate - b.createdDate)
+
+        return HttpResponse.json(transactions)
     })
 ]
 

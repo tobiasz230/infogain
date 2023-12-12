@@ -1,6 +1,6 @@
 export const MOCK_CONFIG = Object.freeze({
     numberOfCustomers: 20,
-    numberOfAllTransactions: 500,
+    numberOfCustomerTransactions: 100,
     transactionsFromRecentMonths: 3,
     transactionAmount: {
         min: 5,

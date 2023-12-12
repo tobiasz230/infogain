@@ -5,11 +5,12 @@
     --border-radius: 8px;
     /* --border-radius-xl: 24px; */
     --border-color: #ececec;
+    --border-color-secondary: #85d763;
   
     --margin-s: 4px;
     --margin-md: 8px;
     --margin-l: 16px;
-    /* --margin-xl: 32px; */
+    --margin-xl: 32px;
   
     /* --padding-s: 4px; */
     --padding-md: 8px;

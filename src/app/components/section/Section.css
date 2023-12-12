@@ -1,0 +1,23 @@
+.section {
+    display: flex;
+    flex-direction: column;
+}
+
+.section__row {
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: var(--margin-xl);
+}
+
+.section__header {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: var(--padding-md); 
+    margin-bottom: var(--margin-xl); 
+    border-bottom: 2px solid var(--border-color-secondary);
+}
+
+.section__subheader {
+    display: flex;
+    flex: 1;
+}
