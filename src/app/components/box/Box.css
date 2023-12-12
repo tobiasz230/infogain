@@ -1,0 +1,9 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: var(--padding-l);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
