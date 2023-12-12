@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Section from './app/components/section/Section';
 import CustomersList from './app/containers/cutomer/CustomersList';
 import CustomerTransactions from './app/containers/transactions/CustomerTransactions';
 import Box from './app/components/box/Box';
@@ -15,7 +14,6 @@ function App() {
   
   return (
     <Container>
-      <Section subheader={'Customer transactions'}>
         <div style={{display: 'grid', gridTemplateColumns: '300px auto', gap: '16px', width: '100%'}}>
           <CustomersList onSelect={handleSelect} />
           <Box>
@@ -26,7 +24,6 @@ function App() {
           )}
         </Box>
       </div>
-      </Section>
     </Container>
   );
 }

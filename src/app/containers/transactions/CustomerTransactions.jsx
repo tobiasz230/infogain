@@ -1,4 +1,6 @@
 import useCustomerTransations from "../../hooks/transaction/useCustomerTransactions";
+import Section from "../../components/section/Section";
+import TransactionsTable from "../../components/transactionsTable/TransactionsTable";
 
 const CustomerTransactions = ({customerId}) => {
     const {transactions} = useCustomerTransations(customerId)
@@ -10,55 +12,30 @@ const CustomerTransactions = ({customerId}) => {
         const key = date.toLocaleString(document.documentElement.lang, {month:'long', year:'numeric'});
         const formattedDate = date.toLocaleString(document.documentElement.lang);
 
-        if (!acc[key]) acc[key] = {transactions: [], sum: 0, currency: transaction.currency, totalPoints: 0}
+        if (!acc[key]) acc[key] = {transactions: [], totalSum: 0, currency: transaction.currency, totalPoints: 0}
         
 
         acc[key].transactions = [...acc[key].transactions, {...transaction, createdDate: formattedDate}];
         acc[key].totalPoints += transaction.rewardPoints;
-        acc[key].sum += transaction.price;
+        acc[key].totalSum += transaction.price;
 
         return acc;
-    }, {})
+    }, {});
+
+    const allPoints = Object.keys(transactionsByMonth).reduce((acc, key) => acc += transactionsByMonth[key].totalPoints, 0);
 
     return (
-        Object.keys(transactionsByMonth).map((month) => (
-            <div key={month}>
-                <table style={{width: '100%'}}>
-                    <thead>
-                        <tr>
-                            <th align="center" colSpan={3}>
-                                {month}
-                            </th>
-                        </tr>
-                        <tr>
-                            <th align="left">Transaction</th>
-                            <th align="right">Price</th>
-                            <th align="right">Points</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {transactionsByMonth[month].transactions.map(t => (
-                            <tr key={t.transactionId}>
-                                <td>
-                                    <strong>{t.transactionId}</strong><br/>
-                                    <small>{t.createdDate}</small>
-                                </td>
-                                <td align="right">{t.price}{t.currency.symbol}</td>
-                                <td align="right">{t.rewardPoints}</td>
-                            </tr>
-                        ))}
-                        <tr>
-                            <td colSpan={2} align="right">
-                                <strong>{transactionsByMonth[month].sum} {transactionsByMonth[month].currency.symbol}</strong>
-                            </td>
-                            <td colSpan={1} align="right">
-                                <strong>{transactionsByMonth[month].totalPoints}</strong>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        ))
+        <Section subheader={'Customer points'} subheaderEnd={<span>all points: <strong>{allPoints}</strong></span>}>
+            {Object.keys(transactionsByMonth).map((month) => (
+                    <TransactionsTable 
+                        key={month} 
+                        {...transactionsByMonth[month]}
+                        month={month}
+                        currency={transactionsByMonth[month].currency.symbol}
+                    />
+                )
+            )}
+        </Section>
     )
 }
 
