@@ -16,15 +16,3 @@ export const getCustomers = async () => {
     return error;
   }
 };
-
-export const getCustomer = async (customerId) => {
-  try {
-    await delay();
-    const response = await fetch(`/api/customer/${customerId}`, {
-      headers: REQUEST_HEADERS,
-    });
-    return response.json();
-  } catch (error) {
-    return error;
-  }
-};
