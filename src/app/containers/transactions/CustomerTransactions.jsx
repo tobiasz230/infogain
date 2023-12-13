@@ -1,7 +1,7 @@
-import useCustomerTransations from "../../hooks/transaction/useCustomerTransactions";
-import Section from "../../components/section/Section";
-import TransactionsTable from "../../components/transactionsTable/TransactionsTable";
 import { useMemo } from "react";
+import useCustomerTransations from "../../hooks/transaction/useCustomerTransactions";
+import Section from "../../../_shared/ui/section/Section";
+import TransactionsTable from "../../components/transactionsTable/TransactionsTable";
 import { getTransactionsMonthly } from "../../../_shared/utils/_transactions";
 
 const CustomerTransactions = ({ customerId }) => {

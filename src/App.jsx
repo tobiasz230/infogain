@@ -1,8 +1,8 @@
 import { useState } from "react";
-import CustomersList from "./app/containers/cutomer/CustomersList";
+import CustomersList from "./app/containers/customer/CustomersList";
 import CustomerTransactions from "./app/containers/transactions/CustomerTransactions";
-import Box from "./app/components/box/Box";
-import Container from "./app/components/container/Container";
+import Box from "./_shared/ui/box/Box";
+import Container from './_shared/ui/container/Container'
 import { CustomerTransactionsProvider } from "./app/context/CustomerTransactionsContext";
 import "./App.css";
 
