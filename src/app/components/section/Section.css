@@ -1,23 +1,23 @@
 .section {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .section__row {
-    display: block;
-    margin-bottom: var(--margin-xl);
+  display: block;
+  margin-bottom: var(--margin-xl);
 }
 
 .section__header {
-    display: flex;
-    justify-content: flex-end;
-    font-weight: var(--font-weight-bold);
-    padding-bottom: var(--padding-md); 
-    margin-bottom: var(--margin-xl); 
-    border-bottom: 2px solid var(--border-color-secondary);
+  display: flex;
+  justify-content: flex-end;
+  font-weight: var(--font-weight-bold);
+  padding-bottom: var(--padding-md);
+  margin-bottom: var(--margin-xl);
+  border-bottom: 2px solid var(--border-color-secondary);
 }
 
 .section__subheader {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }

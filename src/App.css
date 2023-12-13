@@ -1,15 +1,13 @@
 .app {
-    padding: var(--padding-xl) 0;
+  padding: var(--padding-xl) 0;
 }
 
 @media screen and (min-width: 760px) {
-    
-    .app .app__grid {
-        display: grid; 
-        grid-template-columns: auto; 
-        grid-template-columns: 300px auto; 
-        gap: var(--gap); 
-        width: 100%;
-    }
-    
+  .app .app__grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-columns: 300px auto;
+    gap: var(--gap);
+    width: 100%;
+  }
 }

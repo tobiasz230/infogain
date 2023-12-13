@@ -1,23 +1,22 @@
 .list-item-button {
-    display: flex;
-    cursor: pointer;
-    padding: var(--padding-md);
-    border-radius: var(--border-radius); 
-    border: 1px solid var(--border-color); 
-    box-shadow: var(--box-shadow);
-    transition: .3s ease-in-out;
+  display: flex;
+  cursor: pointer;
+  padding: var(--padding-md);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--box-shadow);
+  transition: 0.3s ease-in-out;
 }
 
 .list-item-button:hover {
-    background: var(--list-item-hover-bg);
-    box-shadow: var(--box-shadow-hover);
-    transform: translateX(4px);
+  background: var(--list-item-hover-bg);
+  box-shadow: var(--box-shadow-hover);
+  transform: translateX(4px);
 }
 
 .list-item-button.list-item-button--selected {
-    border-color: var(--list-item-selected-border-color);
-    background-color: var(--list-item-selected-background);
-    box-shadow: var(--box-shadow-hover);
-    transform: translateX(4px);
+  border-color: var(--list-item-selected-border-color);
+  background-color: var(--list-item-selected-background);
+  box-shadow: var(--box-shadow-hover);
+  transform: translateX(4px);
 }
-

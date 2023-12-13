@@ -4,16 +4,15 @@ import { errorHandler } from "../utils";
 
 export const getCustomerTransactions = async (customerId) => {
   try {
-    await delay()
+    await delay();
     const response = await fetch(`/api/transactions/customer/${customerId}`, {
-      headers : REQUEST_HEADERS
+      headers: REQUEST_HEADERS,
     });
 
-    errorHandler(response)
+    errorHandler(response);
 
-    return response.json()
-  } 
-  catch(error) {
+    return response.json();
+  } catch (error) {
     return error;
   }
-}
+};

@@ -4,16 +4,15 @@ import { errorHandler } from "../utils";
 
 export const getRewardConfiguration = async () => {
   try {
-    await delay()
-    const response = await fetch('/api/rewardProgramConfig', {
-      headers : REQUEST_HEADERS
+    await delay();
+    const response = await fetch("/api/rewardProgramConfig", {
+      headers: REQUEST_HEADERS,
     });
 
-    errorHandler(response)
+    errorHandler(response);
 
-    return response.json()
-  } 
-  catch(error) {
+    return response.json();
+  } catch (error) {
     return error;
   }
-}
+};

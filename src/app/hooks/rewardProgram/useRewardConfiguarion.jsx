@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { getRewardConfiguration } from "../../../_shared/services/_rewardProgram";
 
 const useRewardConfiguration = () => {
-    const [configuration, setConfiguration] = useState(null);
+  const [configuration, setConfiguration] = useState(null);
 
-    const fetchConfiguration = async () => {
-        const response = await getRewardConfiguration();
-        if (response) setConfiguration(response);
-    }
+  const fetchConfiguration = async () => {
+    const response = await getRewardConfiguration();
+    if (response) setConfiguration(response);
+  };
 
-    useEffect(() => {
-        fetchConfiguration()
-    }, [])
-    
-    return {configuration};
-}
+  useEffect(() => {
+    fetchConfiguration();
+  }, []);
 
-export default useRewardConfiguration
+  return { configuration };
+};
+
+export default useRewardConfiguration;

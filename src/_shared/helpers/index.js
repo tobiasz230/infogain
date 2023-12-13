@@ -1,2 +1,2 @@
-export * from './_numbers';
-export * from './_delay';
+export * from "./_numbers";
+export * from "./_delay";

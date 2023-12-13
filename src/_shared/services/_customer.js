@@ -3,30 +3,28 @@ import { delay } from "../helpers";
 import { errorHandler } from "../utils";
 
 export const getCustomers = async () => {
-    try {
-      await delay()
-      const response = await fetch(`/api/customers`, {
-        headers : REQUEST_HEADERS
-      });
+  try {
+    await delay();
+    const response = await fetch(`/api/customers`, {
+      headers: REQUEST_HEADERS,
+    });
 
-      errorHandler(response)
+    errorHandler(response);
 
-      return response.json()
-    } 
-    catch(error) {
-      return error;
-    }
+    return response.json();
+  } catch (error) {
+    return error;
   }
+};
 
 export const getCustomer = async (customerId) => {
-    try {
-      await delay();
-      const response = await fetch(`/api/customer/${customerId}`, {
-        headers : REQUEST_HEADERS
-      });
-      return response.json()
-    } 
-    catch(error) {
-      return error;
-    }
+  try {
+    await delay();
+    const response = await fetch(`/api/customer/${customerId}`, {
+      headers: REQUEST_HEADERS,
+    });
+    return response.json();
+  } catch (error) {
+    return error;
   }
+};

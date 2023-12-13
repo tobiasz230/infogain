@@ -1,13 +1,17 @@
-import './ListItemButton.css';
+import "./ListItemButton.css";
 
-const ListItemButton = ({selected = false, children, onClick}) => {
-    const selectecdClass = selected ? ' list-item-button--selected' : '';
+const ListItemButton = ({ selected = false, children, onClick }) => {
+  const selectecdClass = selected ? " list-item-button--selected" : "";
 
-    return (
-        <div className={'list-item-button' + selectecdClass} onClick={onClick} role="button">
-            {children}
-        </div>
-    ) 
-}
+  return (
+    <div
+      className={"list-item-button" + selectecdClass}
+      onClick={onClick}
+      role="button"
+    >
+      {children}
+    </div>
+  );
+};
 
-export default ListItemButton
+export default ListItemButton;

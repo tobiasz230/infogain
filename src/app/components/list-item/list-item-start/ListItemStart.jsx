@@ -1,7 +1,7 @@
-import './ListItemStart.css';
+import "./ListItemStart.css";
 
-const ListItemStart = ({children}) => (
-    <div className="list-item-start">{children}</div>
-)
+const ListItemStart = ({ children }) => (
+  <div className="list-item-start">{children}</div>
+);
 
-export default ListItemStart
+export default ListItemStart;
