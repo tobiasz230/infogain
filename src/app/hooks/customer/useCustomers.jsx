@@ -3,17 +3,22 @@ import { getCustomers } from "../../../_shared/services";
 
 const useCustomers = () => {
   const [customers, setCustomers] = useState([]);
+  const [isLoading, setLoading] = useState(true);
 
   const fetchCustomer = async () => {
     const response = await getCustomers();
-    if (response) setCustomers(response);
+    if (response) {
+      setLoading(false);
+      setCustomers(response)
+    };
   };
 
   useEffect(() => {
+    setLoading(true);
     fetchCustomer();
   }, []);
 
-  return { customers };
+  return { customers, isLoading };
 };
 
 export default useCustomers;

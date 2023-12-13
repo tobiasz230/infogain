@@ -7,13 +7,17 @@ import ListItemText from "../../components/list-item/list-item-text/ListItemText
 import Avatar from "../../components/avatar/Avatar";
 
 const CustomersList = ({ onSelect }) => {
-  const { customers } = useCustomers();
+  const { customers, isLoading } = useCustomers();
   const [selected, setSelected] = useState("");
 
   const handleClick = (customer) => {
     setSelected(customer.id);
     onSelect(customer);
   };
+
+  if(isLoading) return (
+    <span>loading...</span>
+  )
 
   return (
     <List>
