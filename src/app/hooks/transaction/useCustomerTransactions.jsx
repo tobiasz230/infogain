@@ -4,23 +4,28 @@ import { CustomerTransactionsContext } from "../../context/CustomerTransactionsC
 
 const useCustomerTransations = (customerId) => {
     const { customerTransactions, setCustomerTransactions } = useContext(CustomerTransactionsContext);
-    const [transactions, setTransactions] = useState([]);
+    const [transactions, setTransactions] = useState(null);
+    const [isLoading, setLoading] = useState(true);
 
     const fetchTransactions = useCallback(async (id) => {
         const response = await getCustomerTransactions(id);
         if (response) {
+            setLoading(false)
             setTransactions(response)
             setCustomerTransactions(id, response)
         }
     }, [setCustomerTransactions])
     
     useEffect(() => {
-        !customerTransactions || !customerTransactions[customerId] ?
-            fetchTransactions(customerId) :
+        if(!customerTransactions || !customerTransactions[customerId]) {
+            setLoading(true);
+            fetchTransactions(customerId)
+        } else {
             setTransactions(customerTransactions[customerId])
+        }
     }, [customerId, customerTransactions, fetchTransactions])
     
-    return {transactions};
+    return {transactions, isLoading};
 }
 
 export default useCustomerTransations
