@@ -14,7 +14,6 @@ import {
     const [customerTransactions, setTtransactions] = useState(initialState.theme);
   
     const setCustomerTransactions = (customerId, transactions) => {
-        console.log('new transaction', customerId, transactions)
         setTtransactions({...customerTransactions, [customerId]: transactions});
     };
   

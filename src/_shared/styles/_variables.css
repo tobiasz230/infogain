@@ -16,6 +16,8 @@
     --padding-md: 8px;
     --padding-l: 16px;
     --padding-xl: 32px;
+
+    --gap: 16px;
   
     --box-shadow: -1px 1px 2px 0px #ececec;
     --box-shadow-hover: -4px 4px 4px 0px #e1e1e1;

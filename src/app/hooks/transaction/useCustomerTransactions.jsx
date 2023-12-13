@@ -15,8 +15,7 @@ const useCustomerTransations = (customerId) => {
     }, [setCustomerTransactions])
     
     useEffect(() => {
-
-        (!customerTransactions || !customerTransactions[customerId]) ?
+        !customerTransactions || !customerTransactions[customerId] ?
             fetchTransactions(customerId) :
             setTransactions(customerTransactions[customerId])
     }, [customerId, customerTransactions, fetchTransactions])

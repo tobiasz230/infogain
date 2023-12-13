@@ -17,8 +17,9 @@ function App() {
   return (
     <CustomerTransactionsProvider>
       <Container>
+        <div className='app'>
             <Section subheader={'Customer transactions'}>
-              <div style={{display: 'grid', gridTemplateColumns: '300px auto', gap: '16px', width: '100%'}}>
+              <div className='app__grid'>
                 <CustomersList onSelect={handleSelect} />
                 <Box>
                 {customer ? (
@@ -29,6 +30,7 @@ function App() {
               </Box>
             </div>
             </Section>
+        </div>
           </Container>
     </CustomerTransactionsProvider>
   );
