@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Section from './app/components/section/Section';
 import CustomersList from './app/containers/cutomer/CustomersList';
 import CustomerTransactions from './app/containers/transactions/CustomerTransactions';
 import Box from './app/components/box/Box';
@@ -18,7 +17,7 @@ function App() {
     <CustomerTransactionsProvider>
       <Container>
         <div className='app'>
-            <Section subheader={'Customer transactions'}>
+              <h1>Customers reward program</h1>
               <div className='app__grid'>
                 <CustomersList onSelect={handleSelect} />
                 <Box>
@@ -29,7 +28,6 @@ function App() {
                 )}
               </Box>
             </div>
-            </Section>
         </div>
           </Container>
     </CustomerTransactionsProvider>
