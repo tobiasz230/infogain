@@ -1,11 +1,16 @@
+import { REQUEST_HEADERS } from "../consts";
+import { delay } from "../helpers";
+import { errorHandler } from "../utils";
+
 export const getCustomers = async () => {
     try {
+      await delay()
       const response = await fetch(`/api/customers`, {
-        headers : { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-         }
+        headers : REQUEST_HEADERS
       });
+
+      errorHandler(response)
+
       return response.json()
     } 
     catch(error) {
@@ -15,11 +20,9 @@ export const getCustomers = async () => {
 
 export const getCustomer = async (customerId) => {
     try {
+      await delay();
       const response = await fetch(`/api/customer/${customerId}`, {
-        headers : { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-         }
+        headers : REQUEST_HEADERS
       });
       return response.json()
     } 

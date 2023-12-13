@@ -26,8 +26,8 @@ const CustomerTransactions = ({customerId}) => {
 
     if(!!transactions && !transactions.length) return <span>The customer has not made any transaction</span>
 
-
     if (isLoading) return (<span>loading....</span>)
+
     return (
         <Section subheader={'Customer points'} subheaderEnd={<span>all points: <strong>{allPoints}</strong></span>}>
             {Object.keys(transactionsByMonth).map((month) => (

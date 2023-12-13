@@ -1,15 +1,16 @@
-
-const delay = () => new Promise(res => setTimeout(() => res(), 2000))
+import { REQUEST_HEADERS } from "../consts";
+import { delay } from "../helpers";
+import { errorHandler } from "../utils";
 
 export const getCustomerTransactions = async (customerId) => {
   try {
-    await delay();
+    await delay()
     const response = await fetch(`/api/transactions/customer/${customerId}`, {
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
+      headers : REQUEST_HEADERS
     });
+
+    errorHandler(response)
+
     return response.json()
   } 
   catch(error) {
