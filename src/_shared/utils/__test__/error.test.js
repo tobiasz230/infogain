@@ -4,7 +4,7 @@ describe("errorHandler", () => {
   it("should throw an error", () => {
     const fakeResponse = {
       ok: false,
-      statusText: "er ror",
+      statusText: "error",
       status: 404,
     };
 

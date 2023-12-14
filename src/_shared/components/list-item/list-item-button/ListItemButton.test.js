@@ -3,9 +3,8 @@ import { render, screen } from "@testing-library/react";
 
 describe("ListItemButton", () => {
   it("should display component", () => {
-    const { container } = render(<ListItemButton />);
-    // eslint-disable-next-line testing-library/no-container,testing-library/no-node-access
-    const el = container.querySelector("div");
+    render(<ListItemButton />);
+    const el = screen.getByRole("button");
     expect(el).toBeInTheDocument();
   });
 
@@ -17,5 +16,14 @@ describe("ListItemButton", () => {
     );
     const el = screen.getAllByText(/Item/);
     expect(el.length).toBe(1);
+  });
+
+  it("should call onClick callback", () => {
+    const handleClick = jest.fn();
+    render(<ListItemButton onClick={handleClick()} />);
+    const el = screen.getByRole("button");
+    el.click();
+
+    expect(handleClick).toHaveBeenCalled();
   });
 });
