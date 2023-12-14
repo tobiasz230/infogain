@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { MOCK_CONFIG } from "../config";
-import { getRewardPointsByTransaction } from "../../_shared/utils";
+import { getRewardPointsByTransaction } from "../../app/features/customerTransactions/utils";
 import { subtractMonths } from "../../_shared/utils";
 
 const {

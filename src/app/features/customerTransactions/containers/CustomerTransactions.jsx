@@ -2,7 +2,7 @@ import { useContext, useMemo } from "react";
 import useCustomerTransations from "../hooks/useCustomerTransactions";
 import Section from "../../../../_shared/components/section/Section";
 import TransactionsTable from "../components/transactionsTable/TransactionsTable";
-import { getTransactionsMonthly } from "../../../../_shared/utils";
+import { getTransactionsMonthly } from "../utils";
 import { CustomerTransactionsContext } from "../context/CustomerTransactionsContext";
 
 const CustomerTransactions = () => {
