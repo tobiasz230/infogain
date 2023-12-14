@@ -1,9 +1,9 @@
 import { useState } from "react";
-import List from "../../../_shared/ui/list/List";
-import ListItemText from "../../../_shared/ui/list-item/list-item-text/ListItemText";
-import ListItemStart from "../../../_shared/ui/list-item/list-item-start/ListItemStart";
-import ListItemButton from "../../../_shared/ui/list-item/list-item-button/ListItemButton";
-import Avatar from "../../../_shared/ui/avatar/Avatar"
+import List from "../../../../../_shared/ui/list/List";
+import ListItemText from "../../../../../_shared/components/list-item/list-item-text/ListItemText";
+import ListItemStart from "../../../../../_shared/components/list-item/list-item-start/ListItemStart";
+import ListItemButton from "../../../../../_shared/components/list-item/list-item-button/ListItemButton";
+import Avatar from "../../../../../_shared/ui/avatar/Avatar"
 
 const UsersList = ({users = [], onSelect}) => {
     const [selected, setSelected] = useState('');

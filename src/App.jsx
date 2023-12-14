@@ -1,9 +1,9 @@
 import { useState } from "react";
-import CustomersList from "./app/containers/customer/CustomersList";
-import CustomerTransactions from "./app/containers/transactions/CustomerTransactions";
+import CustomersList from "./app/features/customerTransactions/containers/customer/CustomersList";
+import CustomerTransactions from "./app/features/customerTransactions/containers/transactions/CustomerTransactions";
 import Box from "./_shared/ui/box/Box";
 import Container from './_shared/ui/container/Container'
-import { CustomerTransactionsProvider } from "./app/context/CustomerTransactionsContext";
+import { CustomerTransactionsProvider } from "./app/features/customerTransactions/context/CustomerTransactionsContext";
 import "./App.css";
 
 function App() {

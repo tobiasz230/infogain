@@ -1,4 +1,4 @@
-import useCustomers from "../../hooks/customer/useCustomers";
+import useCustomers from "../../../../hooks/customer/useCustomers";
 import UsersList from "../../components/usersList/UsersList";
 
 const CustomersList = ({ onSelect }) => {
