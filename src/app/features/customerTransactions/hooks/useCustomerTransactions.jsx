@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext, useCallback } from "react";
-import { getCustomerTransactions } from "../../../_shared/services";
-import { CustomerTransactionsContext } from "../../features/customerTransactions/context/CustomerTransactionsContext";
+import { getCustomerTransactions } from "../../../../_shared/services";
+import { CustomerTransactionsContext } from "../context/CustomerTransactionsContext";
 
 const useCustomerTransations = (customerId) => {
   const { customerTransactions, setCustomerTransactions } = useContext(

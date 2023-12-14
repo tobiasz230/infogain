@@ -1,5 +1,5 @@
-import useCustomers from "../../../../hooks/customer/useCustomers";
-import UsersList from "../../components/usersList/UsersList";
+import useCustomers from "../hooks/useCustomers";
+import UsersList from "../components/usersList/UsersList";
 
 const CustomersList = ({ onSelect }) => {
   const { customers, isLoading } = useCustomers();
