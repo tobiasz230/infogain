@@ -22,9 +22,9 @@ const CustomersList = () => {
     setCustomer(customer);
   };
 
-  if (isLoading) return <span>loading...</span>;
+  if (isLoading) return <strong>loading...</strong>;
 
-  if (!customers.length) return <span>No customers</span>;
+  if (!customers.length) return <strong>No customers</strong>;
   return <UsersList users={customersList} onSelect={handleClick} />;
 };
 

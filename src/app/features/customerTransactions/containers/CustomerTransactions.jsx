@@ -22,21 +22,34 @@ const CustomerTransactions = () => {
       ),
     [transactionsByMonth],
   );
+
   if (!customer && !isLoading)
     return (
-      <span>
-        Select a customer on the left to view their recent transactions
-      </span>
+      <Section subheader={"Customer transactions"}>
+        <span>
+          Select a customer on the left to view their recent transactions
+        </span>
+      </Section>
     );
 
-  if (isLoading) return <span>loading....</span>;
+  if (isLoading)
+    return (
+      <Section
+        subheader={"Customer transactions"}
+        subheaderEnd={<span>loading....</span>}
+      ></Section>
+    );
 
   if (!!transactions && !transactions.length)
-    return <span>The customer has not made any transaction</span>;
+    return (
+      <Section subheader={"Customer transactions"}>
+        <span>The customer has not made any transaction</span>
+      </Section>
+    );
 
   return (
     <Section
-      subheader={"Customer points"}
+      subheader={"Customer transactions"}
       subheaderEnd={
         <span>
           all points: <strong>{allPoints}</strong>
