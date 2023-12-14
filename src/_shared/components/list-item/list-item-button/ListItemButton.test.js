@@ -26,4 +26,12 @@ describe("ListItemButton", () => {
 
     expect(handleClick).toHaveBeenCalled();
   });
+
+  it("should be selected", () => {
+    const handleClick = jest.fn();
+    render(<ListItemButton selected />);
+    const el = screen.getByRole("button");
+
+    expect(el).toHaveClass("list-item-button--selected");
+  });
 });
