@@ -1,13 +1,11 @@
-export const getTransactionsMonthly = (transactions) => transactions
-.reduce((acc, transaction) => {
+export const getTransactionsMonthly = (transactions) =>
+  transactions.reduce((acc, transaction) => {
     const date = new Date(transaction.createdDate);
-    const key = date.toLocaleString(document.documentElement.lang, {
+    const key = date.toLocaleString("en", {
       month: "long",
       year: "numeric",
     });
-    const formattedDate = date.toLocaleString(
-      document.documentElement.lang,
-    );
+    const formattedDate = date.toLocaleString("en");
 
     if (!acc[key])
       acc[key] = {
@@ -25,4 +23,4 @@ export const getTransactionsMonthly = (transactions) => transactions
     acc[key].totalSum += transaction.price;
 
     return acc;
-  }, {})
+  }, {});
