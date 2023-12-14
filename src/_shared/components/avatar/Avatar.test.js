@@ -1,7 +1,7 @@
 import Avatar from "./Avatar";
 import { render, screen } from "@testing-library/react";
 
-describe(Avatar, () => {
+describe("w", () => {
   it("should display avatar image", () => {
     render(<Avatar imageUrl={"http://example-image.com"} />);
     const el = screen.getByAltText("avatar");
