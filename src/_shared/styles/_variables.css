@@ -1,0 +1,43 @@
+:root {
+  --white: #ffffff;
+  --black: #000;
+
+  --border-radius: 8px;
+  /* --border-radius-xl: 24px; */
+  --border-color: #ececec;
+  --border-color-secondary: #85d763;
+
+  --margin-s: 4px;
+  --margin-md: 8px;
+  --margin-l: 16px;
+  --margin-xl: 32px;
+
+  --padding-s: 4px;
+  --padding-md: 8px;
+  --padding-l: 16px;
+  --padding-xl: 32px;
+
+  --gap: 16px;
+
+  --box-sizing: "border-box";
+
+  --box-shadow: -1px 1px 2px 0px #ececec;
+  --box-shadow-hover: -4px 4px 4px 0px #e1e1e1;
+
+  /* default font familty from create-react-app */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  --font-family-code: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+
+  --font-weight-thin: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+
+  --list-item-hover-bg: #f9f9f9;
+  --list-item-selected-border-color: #85d763;
+  --list-item-selected-background: #f9f9f9;
+
+  --table-th-bg: #f9f9f9;
+}

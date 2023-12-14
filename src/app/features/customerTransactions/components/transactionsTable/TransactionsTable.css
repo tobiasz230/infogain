@@ -1,0 +1,26 @@
+.transaction-table {
+  width: 100%;
+  margin-bottom: var(--margin-xl);
+  border-collapse: collapse;
+}
+
+.transaction-table:last-child {
+  margin: 0;
+}
+
+.transaction-table td {
+  padding: var(--padding-md);
+}
+
+.transaction-table th {
+  padding: var(--padding-md);
+  font-weight: var(--font-weight-bold);
+}
+
+.transaction-table thead tr:first-child {
+  background: var(--table-th-bg);
+}
+
+.transaction-table tbody td {
+  border-bottom: 1px solid var(--border-color);
+}
