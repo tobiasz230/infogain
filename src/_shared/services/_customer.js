@@ -1,10 +1,10 @@
 import { REQUEST_HEADERS } from "../consts";
-import { delay } from "../helpers";
+import { delay } from "msw";
 import { errorHandler } from "../utils";
 
 export const getCustomers = async () => {
   try {
-    await delay();
+    await delay(800);
     const response = await fetch(`/api/customers`, {
       headers: REQUEST_HEADERS,
     });

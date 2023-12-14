@@ -1,7 +1,7 @@
 import { http, HttpResponse } from "msw";
 import { MOCK_CONFIG } from "../config";
 import { createFakeTransaction } from "../utils";
-import { getRandomInt } from "../../_shared/helpers";
+import { getRandomInt } from "../../_shared/utils";
 
 const transactionsHandlers = [
   http.get("/api/transactions/customer/:customerId", () => {
