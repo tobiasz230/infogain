@@ -1,11 +1,13 @@
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
 import useCustomerTransations from "../hooks/useCustomerTransactions";
 import Section from "../../../../_shared/components/section/Section";
 import TransactionsTable from "../components/transactionsTable/TransactionsTable";
 import { getTransactionsMonthly } from "../../../../_shared/utils";
+import { CustomerTransactionsContext } from "../context/CustomerTransactionsContext";
 
-const CustomerTransactions = ({ customerId }) => {
-  const { transactions, isLoading } = useCustomerTransations(customerId);
+const CustomerTransactions = () => {
+  const { customer } = useContext(CustomerTransactionsContext);
+  const { transactions, isLoading } = useCustomerTransations();
 
   const transactionsByMonth = useMemo(
     () => !!transactions && getTransactionsMonthly(transactions),
@@ -20,10 +22,17 @@ const CustomerTransactions = ({ customerId }) => {
       ),
     [transactionsByMonth],
   );
+  if (!customer && !isLoading)
+    return (
+      <span>
+        Select a customer on the left to view their recent transactions
+      </span>
+    );
 
   if (isLoading) return <span>loading....</span>;
 
-  if (!!transactions && !transactions.length) return <span>The customer has not made any transaction</span>;
+  if (!!transactions && !transactions.length)
+    return <span>The customer has not made any transaction</span>;
 
   return (
     <Section

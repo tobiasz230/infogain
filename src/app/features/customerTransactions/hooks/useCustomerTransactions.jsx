@@ -2,12 +2,11 @@ import { useEffect, useState, useContext, useCallback } from "react";
 import { getCustomerTransactions } from "../../../../_shared/services";
 import { CustomerTransactionsContext } from "../context/CustomerTransactionsContext";
 
-const useCustomerTransations = (customerId) => {
-  const { customerTransactions, setCustomerTransactions } = useContext(
-    CustomerTransactionsContext,
-  );
+const useCustomerTransations = () => {
+  const { customer, customerTransactions, setCustomerTransactions } =
+    useContext(CustomerTransactionsContext);
   const [transactions, setTransactions] = useState(null);
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false);
 
   const fetchTransactions = useCallback(
     async (id) => {
@@ -22,13 +21,15 @@ const useCustomerTransations = (customerId) => {
   );
 
   useEffect(() => {
-    if (!customerTransactions || !customerTransactions[customerId]) {
+    if (!customer) return;
+
+    if (!customerTransactions || !customerTransactions[customer.id]) {
       setLoading(true);
-      fetchTransactions(customerId);
+      fetchTransactions(customer.id);
     } else {
-      setTransactions(customerTransactions[customerId]);
+      setTransactions(customerTransactions[customer.id]);
     }
-  }, [customerId, customerTransactions, fetchTransactions]);
+  }, [customer, customerTransactions, fetchTransactions]);
 
   return { transactions, isLoading };
 };

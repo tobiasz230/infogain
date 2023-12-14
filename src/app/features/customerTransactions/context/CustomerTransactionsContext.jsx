@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 
 const initialState = {
+  customer: null,
   transactions: null,
   setCustomerTransactions: () => {},
 };
@@ -8,17 +9,26 @@ const initialState = {
 export const CustomerTransactionsContext = createContext(initialState);
 
 export const CustomerTransactionsProvider = ({ children }) => {
-  const [customerTransactions, setTtransactions] = useState(initialState.theme);
+  const [customerTransactions, setTransactions] = useState(
+    initialState.transactions,
+  );
+  const [customerDetails, setCustomerDetails] = useState(initialState.customer);
 
   const setCustomerTransactions = (customerId, transactions) => {
-    setTtransactions({ ...customerTransactions, [customerId]: transactions });
+    setTransactions({ ...customerTransactions, [customerId]: transactions });
+  };
+
+  const setCustomer = (customer) => {
+    setCustomerDetails(customer);
   };
 
   return (
     <CustomerTransactionsContext.Provider
       value={{
+        customer: customerDetails,
         customerTransactions,
         setCustomerTransactions,
+        setCustomer,
       }}
     >
       {children}
